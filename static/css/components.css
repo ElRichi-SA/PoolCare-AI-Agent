@@ -45,3 +45,51 @@
 
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
 }
+
+.card {
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 10px;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.textarea {
+  width: 100%;
+
+  height: 180px;
+
+  padding: 15px;
+
+  resize: none;
+}
+
+input {
+  width: 100%;
+
+  padding: 12px;
+
+  margin-bottom: 20px;
+}
+
+.selector button.active {
+  background: #0077b6;
+  color: white;
+}
+
+.selector button {
+  border: none;
+  border-radius: 6px;
+}
+
+#calcular,
+#consultar {
+  background: #0077b6;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
