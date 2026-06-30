@@ -1,0 +1,23 @@
+.app {
+  display: flex;
+
+  height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+
+  background: #0b3c5d;
+
+  color: white;
+
+  padding: 30px;
+}
+
+.main {
+  flex: 1;
+
+  padding: 40px;
+
+  overflow: auto;
+}

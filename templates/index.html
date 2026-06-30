@@ -3,26 +3,53 @@
   <head>
     <meta charset="UTF-8" />
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>PoolCare AI</title>
 
     <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/layout.css" />
+    <link rel="stylesheet" href="/static/css/components.css" />
   </head>
 
   <body>
-    <div class="container">
-      <h1>🏊 PoolCare AI</h1>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="logo">
+          🏊
 
-      <h2>Consultor Inteligente para Piscinas</h2>
+          <h2>PoolCare AI</h2>
+        </div>
 
-      <textarea
-        id="consulta"
-        placeholder="Escribe aquí tu consulta..."
-      ></textarea>
+        <nav>
+          <button class="menu active">Nueva Consulta</button>
 
-      <button id="btnConsultar">Consultar</button>
+          <button class="menu">Historial</button>
 
-      <div id="respuesta">La respuesta aparecerá aquí.</div>
+          <button class="menu">Información</button>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <header>
+          <h1>Consultor Inteligente para Piscinas</h1>
+
+          <p>Sistema basado en IA + RAG</p>
+        </header>
+
+        <section class="selector">
+          <button id="modoLibre" class="active">Consulta Libre</button>
+
+          <button id="modoGuiado">Asistente Guiado</button>
+        </section>
+
+        <section id="contenido"></section>
+
+        <section id="respuesta">Esperando una consulta...</section>
+      </main>
     </div>
+
+    <script src="/static/js/dashboard.js"></script>
 
     <script src="/static/js/app.js"></script>
   </body>

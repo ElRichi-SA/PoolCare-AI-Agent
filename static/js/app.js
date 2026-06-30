@@ -7,3 +7,12 @@ boton.addEventListener("click", () => {
 
   respuesta.innerHTML = "<b>Consulta enviada:</b><br><br>" + consulta;
 });
+
+document.addEventListener("click", function (e) {
+  if (e.target.id === "consultar") {
+    const texto = document.getElementById("consulta").value;
+
+    document.getElementById("respuesta").innerHTML =
+      "<h3>Consulta enviada</h3><br>" + texto;
+  }
+});
