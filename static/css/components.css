@@ -93,3 +93,11 @@ input {
   border-radius: 6px;
   cursor: pointer;
 }
+
+.spinner {
+  padding: 20px;
+
+  text-align: center;
+
+  font-size: 18px;
+}

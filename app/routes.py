@@ -18,3 +18,16 @@ def health():
 def consultar(data: ConsultationRequest):
 
     return ConsultationService.process(data)
+
+@router.get("/version")
+def version():
+
+    return {
+
+        "version":"1.0.0",
+
+        "backend":"FastAPI",
+
+        "estado":"Operativo"
+
+    }

@@ -1,3 +1,5 @@
+import "./dashboard.js";
+
 document.addEventListener("click", function (e) {
   if (e.target.id === "consultar") {
     const consulta = document.getElementById("consulta").value;
