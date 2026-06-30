@@ -4,11 +4,26 @@
     <meta charset="UTF-8" />
 
     <title>PoolCare AI</title>
+
+    <link rel="stylesheet" href="/static/css/style.css" />
   </head>
 
   <body>
-    <h1>PoolCare AI</h1>
+    <div class="container">
+      <h1>🏊 PoolCare AI</h1>
 
-    <p>Agente Inteligente para Limpieza de Piscinas</p>
+      <h2>Consultor Inteligente para Piscinas</h2>
+
+      <textarea
+        id="consulta"
+        placeholder="Escribe aquí tu consulta..."
+      ></textarea>
+
+      <button id="btnConsultar">Consultar</button>
+
+      <div id="respuesta">La respuesta aparecerá aquí.</div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
   </body>
 </html>
