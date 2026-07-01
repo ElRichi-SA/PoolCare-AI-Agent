@@ -1,0 +1,6 @@
+parametro,operador,valor,diagnostico
+pH,>,7.6,pH alto
+pH,<,7.2,pH bajo
+Cloro,<,1,Cloro insuficiente
+Alcalinidad,< ,80,Alcalinidad baja
+Alcalinidad,>,120,Alcalinidad Alta

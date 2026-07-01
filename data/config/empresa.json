@@ -1,0 +1,15 @@
+{
+  "empresa": {
+    "nombre": "PoolCare Solutions",
+    "pais": "México",
+    "version": "1.0.0"
+  },
+
+  "politicas": {
+    "usar_solo_productos_propios": true,
+
+    "permitir_recomendaciones_externas": false,
+
+    "mostrar_advertencias": true
+  }
+}
