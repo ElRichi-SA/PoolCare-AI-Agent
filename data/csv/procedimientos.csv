@@ -1,0 +1,7 @@
+id_procedimiento,titulo,descripcion
+1,Reducir pH,Aplicar el reductor de pH con la bomba en funcionamiento.
+2,Incrementar pH,Agregar el incrementador de pH lentamente.
+3,Incrementar Cloro,Aplicar hipoclorito y mantener filtración continua.
+4,Tratamiento de Choque,Aplicar tratamiento de choque y cepillar paredes.
+5,Clarificación,Agregar clarificador y filtrar durante 24 horas.
+6,Agua Turbia,Realizar retrolavado del filtro antes del tratamiento.

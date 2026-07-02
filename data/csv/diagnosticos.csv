@@ -1,8 +1,7 @@
-id_regla,parametro,operador,valor,diagnostico,severidad,id_producto,id_procedimiento,mensaje
-1,ph,>,7.6,pH alto,Alta,3,1,El pH está por encima del rango recomendado.
-2,ph,<,7.2,pH bajo,Alta,2,2,El pH está por debajo del rango recomendado.
-3,cloro,<,1.0,Cloro insuficiente,Alta,1,3,El nivel de cloro es insuficiente.
-4,alcalinidad,<,80,Alcalinidad baja,Media,6,4,La alcalinidad es inferior al rango recomendado.
-5,aspecto,==,verde,Agua verde,Crítica,1,5,Se detecta proliferación de algas.
-6,aspecto,==,turbia,Agua turbia,Alta,5,6,El agua requiere clarificación.
-7,olor,==,fuerte,Olor intenso,Media,1,7,Posible presencia de cloraminas.
+id,parametro,operador,valor,diagnostico,severidad,codigo_tratamiento
+1,ph,>,7.6,pH Alto,Alta,TRAT_PH_ALTO
+2,ph,<,7.2,pH Bajo,Alta,TRAT_PH_BAJO
+3,cloro,<,1.0,Cloro Bajo,Alta,TRAT_CLORO_BAJO
+4,alcalinidad,<,80,Alcalinidad Baja,Media,TRAT_ALCALINIDAD
+5,aspecto,==,verde,Agua Verde,Crítica,TRAT_VERDE
+6,aspecto,==,turbia,Agua Turbia,Alta,TRAT_TURBIA

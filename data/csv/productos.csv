@@ -1,6 +1,7 @@
-id,nombre,tipo
-1,Hipoclorito de Sodio,Desinfectante
-2,Tricloro Polvo,Desinfectante
-3,pH+ Plus,Ajustador
-4,Algicida,Preventivo
-5,Clarificador,Clarificante
+id_producto,nombre,tipo,presentacion,unidad,activo
+1,Hipoclorito de Sodio 13%,Desinfectante,20,L,true
+2,Incrementador de pH,Corrector,5,kg,true
+3,Reductor de pH,Corrector,5,kg,true
+4,Alguicida Premium,Alguicida,1,L,true
+5,Clarificador,Clarificante,1,L,true
+6,Incrementador de Alcalinidad,Corrector,5,kg,true

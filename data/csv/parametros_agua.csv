@@ -1,5 +1,5 @@
-id_parametro,nombre,minimo,maximo,unidad,descripcion
-1,Cloro libre,1,5,ppm,
-2,Cloro residual,0,0.3,ppm,
-3,pH,7.2,7.6,,
-4,Alcalinidad,80,120,,
+parametro,minimo,maximo,unidad
+ph,7.2,7.6,pH
+cloro,1.0,3.0,ppm
+alcalinidad,80,120,ppm
+temperatura,24,30,°C
