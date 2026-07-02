@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from app.models.consultation import ConsultationRequest
+from app.models.consultation import Consultation
 from app.services.consultation_service import ConsultationService
 
 router = APIRouter()
@@ -15,7 +15,7 @@ def health():
 
 
 @router.post("/consultar")
-def consultar(data: ConsultationRequest):
+def consultar(data: Consultation):
 
     return ConsultationService.process(data)
 

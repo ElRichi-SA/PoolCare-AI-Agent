@@ -1,0 +1,5 @@
+codigo_tratamiento,descripcion,id_producto,orden,id_procedimiento,prioridad
+TRAT_PH_ALTO,Reducir pH,3,1,1,Alta
+TRAT_CLORO_BAJO,Incrementar cloro,1,2,3,Alta
+TRAT_AGUA_VERDE,Tratamiento de choque,1,3,5,Crítica
+TRAT_AGUA_VERDE,Aplicar clarificador,5,4,6,Media
