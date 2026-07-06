@@ -9,19 +9,23 @@ class DiagnosisService:
 
     def analyze(self, consultation):
 
-        rules = self.repository.get_rules()
+        rules = self.repository.get_all_rules()
 
         diagnostics = []
+
+        data = consultation.model_dump()
 
         for _, rule in rules.iterrows():
 
             parameter = rule["parametro"]
 
-            if parameter not in consultation:
+            if parameter not in data:
                 continue
 
+            value = data[parameter]
+
             if evaluate_rule(
-                consultation[parameter],
+                value,
                 rule["operador"],
                 rule["valor"]
             ):
@@ -29,8 +33,7 @@ class DiagnosisService:
                 diagnostics.append({
                     "diagnostico": rule["diagnostico"],
                     "severidad": rule["severidad"],
-                    "codigo_tratamiento": rule["codigo_tratamiento"],
-                    "mensaje": rule["mensaje"]
+                    "codigo_tratamiento": rule["codigo_tratamiento"]
                 })
 
         return diagnostics

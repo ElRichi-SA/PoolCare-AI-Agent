@@ -5,12 +5,16 @@ from app.core.config import CSV_DIR
 
 class KnowledgeService:
 
-    def __init__(self):
-        self.products = None
-        self.diagnosis = None
-        self.treatments = None
-        self.dosages = None
-        self.procedures = None
+    def get_products(self):
+        return self.products
+    def get_diagnosis_rules(self):
+        return self.diagnosis
+    def get_treatments(self):
+        return self.treatments
+    def get_dosages(self):
+        return self.dosages
+    def get_procedures(self):
+        return self.procedures
 
     def load(self):
 

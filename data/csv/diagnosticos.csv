@@ -5,3 +5,4 @@ id,parametro,operador,valor,diagnostico,severidad,codigo_tratamiento
 4,alcalinidad,<,80,Alcalinidad Baja,Media,TRAT_ALCALINIDAD
 5,aspecto,==,verde,Agua Verde,Crítica,TRAT_VERDE
 6,aspecto,==,turbia,Agua Turbia,Alta,TRAT_TURBIA
+7,alcalinidad,>,140,Alcalinidad Alta,Media,TRAT_ALC_ALTA
