@@ -11,35 +11,24 @@ class PromptBuilder:
         contexto = ""
 
         for doc in documentos:
-            contexto += doc["content"]
+            contexto += doc.page_content
             contexto += "\n\n"
 
-        texto = f"""
-Eres un consultor profesional especializado en mantenimiento de piscinas.
-
-Consulta del cliente:
-
+        prompt = f"""
+Consulta:
 {consulta}
 
-Diagnósticos detectados:
-
+Diagnósticos:
 {diagnosticos}
 
-Tratamientos calculados:
-
+Tratamientos:
 {tratamientos}
 
-Información técnica obtenida del manual:
+Información técnica:
 
 {contexto}
 
-Genera una respuesta profesional.
-
-No inventes tratamientos.
-
-No cambies las cantidades calculadas.
-
-Explica el procedimiento paso a paso.
+Con base únicamente en la información anterior, genera una recomendación profesional para el mantenimiento de la alberca.
 """
 
-        return texto
+        return prompt
