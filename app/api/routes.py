@@ -31,3 +31,8 @@ def version():
         "estado":"Operativo"
 
     }
+    
+@router.get("/historial")
+def historial():
+
+    return history_service.get_all()

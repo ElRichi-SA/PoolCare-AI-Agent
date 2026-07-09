@@ -7,7 +7,6 @@ from app.rag.retriever import RetrieverService
 from app.llm.prompt_builder import PromptBuilder
 from app.llm.llm_service import LLMService
 
-
 class ConsultationService:
 
     @staticmethod
@@ -75,7 +74,7 @@ class ConsultationService:
         # =====================================
 
         respuesta = llm.generate(prompt)
-
+        
         # =====================================
         # 8. Respuesta
         # =====================================
