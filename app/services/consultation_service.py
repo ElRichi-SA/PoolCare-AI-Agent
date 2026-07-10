@@ -7,10 +7,39 @@ from app.rag.retriever import RetrieverService
 from app.llm.prompt_builder import PromptBuilder
 from app.llm.llm_service import LLMService
 
+from app.models.response import ConsultationResponse
+
+
 class ConsultationService:
 
     @staticmethod
-    def process(data):
+    def process_free(data):
+
+        retriever = RetrieverService()
+        prompt_builder = PromptBuilder()
+        llm = LLMService()
+
+        documentos = retriever.search(
+            data.consulta
+        )
+
+        prompt = prompt_builder.build(
+            consulta=data.consulta,
+            diagnosticos=[],
+            tratamientos=[],
+            documentos=documentos
+        )
+
+        respuesta = llm.generate(prompt)
+
+        return ConsultationResponse(
+            diagnosticos=[],
+            tratamientos=[],
+            respuesta_llm=respuesta
+        )
+
+    @staticmethod
+    def process_guided(data):
 
         diagnosis_service = DiagnosisService()
         treatment_service = TreatmentService()
@@ -20,67 +49,37 @@ class ConsultationService:
         prompt_builder = PromptBuilder()
         llm = LLMService()
 
-        # =====================================
-        # 1. Diagnóstico
-        # =====================================
-
         diagnosticos = diagnosis_service.analyze(data)
-
-        # =====================================
-        # 2. Tratamientos
-        # =====================================
 
         tratamientos = treatment_service.build(
             diagnosticos
         )
-
-        # =====================================
-        # 3. Dosificación
-        # =====================================
 
         tratamientos = calculation_service.calculate(
             data.volumen,
             tratamientos
         )
 
-        # =====================================
-        # 4. Consulta para el RAG
-        # =====================================
-
-        query = " ".join(
-            f"{d.get('diagnostico', '')} {d.get('codigo_tratamiento', '')}"
+        consulta = ", ".join(
+            d["diagnostico"]
             for d in diagnosticos
         )
 
-        # =====================================
-        # 5. Recuperación de documentos
-        # =====================================
-
-        documentos = retriever.search(query)
-
-        # =====================================
-        # 6. Construcción del Prompt
-        # =====================================
+        documentos = retriever.search(
+            consulta
+        )
 
         prompt = prompt_builder.build(
-            consulta=query,
+            consulta=consulta,
             diagnosticos=diagnosticos,
             tratamientos=tratamientos,
             documentos=documentos
         )
 
-        # =====================================
-        # 7. Generación con LLM
-        # =====================================
-
         respuesta = llm.generate(prompt)
-        
-        # =====================================
-        # 8. Respuesta
-        # =====================================
 
-        return {
-            "diagnosticos": diagnosticos,
-            "tratamientos": tratamientos,
-            "respuesta": respuesta
-        }
+        return ConsultationResponse(
+            diagnosticos=diagnosticos,
+            tratamientos=tratamientos,
+            respuesta_llm=respuesta
+        )

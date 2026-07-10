@@ -1,9 +1,14 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
+
 
 class ConsultationResponse(BaseModel):
 
-    diagnosticos: list
+    success: bool = True
 
-    tratamientos: list
+    diagnosticos: list = Field(default_factory=list)
+
+    tratamientos: list = Field(default_factory=list)
 
     respuesta_llm: str = ""
+
+    version: str = "0.9.1"

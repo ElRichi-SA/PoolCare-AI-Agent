@@ -1,17 +1,41 @@
-export async function consultarAPI(datos) {
-  const respuesta = await fetch("/consultar", {
-    method: "POST",
+const API = "http://127.0.0.1:8000";
 
+export async function consultaLibre(texto) {
+  const response = await fetch(`${API}/consultar`, {
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
+    body: JSON.stringify({
+      consulta: texto,
+    }),
+  });
 
+  if (!response.ok) {
+    throw new Error("Error al consultar el servidor");
+  }
+
+  return await response.json();
+}
+
+export async function consultaGuiada(datos) {
+  const response = await fetch(`${API}/analizar`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
     body: JSON.stringify(datos),
   });
 
-  if (!respuesta.ok) {
-    throw new Error("Error al consultar el servidor.");
+  if (!response.ok) {
+    throw new Error("Error al analizar");
   }
 
-  return await respuesta.json();
+  return await response.json();
+}
+
+export async function health() {
+  const response = await fetch(`${API}/health`);
+
+  return await response.json();
 }

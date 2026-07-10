@@ -1,6 +1,8 @@
 from pydantic import BaseModel
 
-class Consultation(BaseModel):
+
+class GuidedConsultation(BaseModel):
+
     volumen: float
     ph: float
     cloro: float
