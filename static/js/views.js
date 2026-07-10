@@ -138,7 +138,7 @@ export function renderResultado(resultado) {
 
             <div style="white-space:pre-wrap">
 
-                ${resultado.respuesta_llm}
+                ${marked.parse(resultado.respuesta_llm)}
 
             </div>
 

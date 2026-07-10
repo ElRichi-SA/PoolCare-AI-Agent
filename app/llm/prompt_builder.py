@@ -28,7 +28,29 @@ Información técnica:
 
 {contexto}
 
-Con base únicamente en la información anterior, genera una recomendación profesional para el mantenimiento de la alberca.
+Genera la respuesta usando EXACTAMENTE este formato Markdown:
+
+# Diagnóstico
+
+Breve resumen del estado del agua.
+
+# Productos
+
+| Producto | Cantidad |
+|----------|----------|
+| ... | ... |
+
+# Procedimiento
+
+1.
+2.
+3.
+
+# Recomendaciones
+
+- ...
+- ...
+- ...
 """
 
         return prompt

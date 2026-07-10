@@ -13,21 +13,26 @@ const contenido = document.getElementById("contenido");
 // Vista inicial
 vistaConsultaLibre();
 
+// Botones de consulta
+const modoLibreBtn = document.getElementById("modoLibre");
+const modoGuiadoBtn = document.getElementById("modoGuiado");
+
 // Eventos de los botones superiores
-document.getElementById("modoLibre").addEventListener("click", () => {
+modoLibreBtn.addEventListener("click", () => {
   vistaConsultaLibre();
 
-  document.getElementById("modoLibre").classList.add("active");
-  document.getElementById("modoGuiado").classList.remove("active");
+  modoLibreBtn.classList.add("active");
+  modoGuiadoBtn.classList.remove("active");
 });
 
-document.getElementById("modoGuiado").addEventListener("click", () => {
+modoGuiadoBtn.addEventListener("click", () => {
   vistaGuiada();
 
-  document.getElementById("modoGuiado").classList.add("active");
-  document.getElementById("modoLibre").classList.remove("active");
+  modoGuiadoBtn.classList.add("active");
+  modoLibreBtn.classList.remove("active");
 });
 
+// Eventos de consulta
 document.addEventListener("click", async (e) => {
   if (e.target.id !== "consultar") return;
 
@@ -91,5 +96,20 @@ document.addEventListener("click", async (e) => {
         `;
 
     console.error(error);
+  }
+});
+// Botones laterales
+const nuevaConsultaBtn = document.getElementById("nuevaConsulta");
+
+// Eventos de los botones laterales
+nuevaConsultaBtn.addEventListener("click", () => {
+  if (modoLibreBtn.classList.contains("active")) {
+    vistaConsultaLibre();
+    modoLibreBtn.classList.add("active");
+    modoGuiadoBtn.classList.remove("active");
+  } else {
+    vistaGuiada();
+    modoGuiadoBtn.classList.add("active");
+    modoLibreBtn.classList.remove("active");
   }
 });
