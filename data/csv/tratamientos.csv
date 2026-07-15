@@ -1,7 +1,7 @@
 codigo_tratamiento,id_producto,id_procedimiento,orden
 TRAT_PH_ALTO,3,1,1
 TRAT_PH_BAJO,2,2,1
-TRAT_CLORO_BAJO,1,3,1
+TRAT_CLORO_BAJO,6,3,1
 TRAT_VERDE,1,4,1
 TRAT_VERDE,5,5,2
 TRAT_ALC_ALTA,6,7,1

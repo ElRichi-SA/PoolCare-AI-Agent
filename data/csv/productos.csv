@@ -5,3 +5,4 @@ id_producto,nombre,tipo,presentacion,unidad,activo
 4,Alguicida Premium,Alguicida,1,L,true
 5,Clarificador,Clarificante,1,L,true
 6,Incrementador de Alcalinidad,Corrector,5,kg,true
+7,Tricloro Polvo,Desinfectante,1,kg,true
