@@ -146,3 +146,23 @@ export function renderResultado(resultado) {
 
     `;
 }
+
+export function historial() {
+  contenido.innerHTML = `
+        <div class="card">
+            <h2>Historial de Consultas</h2>
+            <p>Aquí se mostrará el historial de consultas proximamente...</p>
+        </div>
+    `;
+}
+
+export function informacion() {
+  contenido.innerHTML = `
+        <div class="card">
+            <h2>Información</h2>
+            <p>PoolCare AI es una aplicación que ayuda a diagnosticar y recomendar tratamientos para piscinas.</p>
+            <p>Aplicación desarrollada por Ricardo Salcedo como proyecto "Challenge" para Alura ONE.</p>
+            <p>Repositorio: <a href="https://github.com/ElRichi-SA/PoolCare-AI-Agent" target="_blank">https://github.com/ElRichi-SA/PoolCare-AI-Agent</a></p>
+        </div>
+    `;
+}

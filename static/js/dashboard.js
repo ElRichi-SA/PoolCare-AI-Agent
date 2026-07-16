@@ -6,10 +6,12 @@ import {
   renderDiagnosticos,
   renderTratamientos,
   renderResultado,
+  historial,
+  informacion,
 } from "./views.js";
 
 const contenido = document.getElementById("contenido");
-
+const respuesta = document.getElementById("respuesta");
 // Vista inicial
 vistaConsultaLibre();
 
@@ -20,6 +22,7 @@ const modoGuiadoBtn = document.getElementById("modoGuiado");
 // Eventos de los botones superiores
 modoLibreBtn.addEventListener("click", () => {
   vistaConsultaLibre();
+  respuesta.hidden = false;
 
   modoLibreBtn.classList.add("active");
   modoGuiadoBtn.classList.remove("active");
@@ -27,6 +30,7 @@ modoLibreBtn.addEventListener("click", () => {
 
 modoGuiadoBtn.addEventListener("click", () => {
   vistaGuiada();
+  respuesta.hidden = false;
 
   modoGuiadoBtn.classList.add("active");
   modoLibreBtn.classList.remove("active");
@@ -62,6 +66,7 @@ document.addEventListener("click", async (e) => {
 
 document.addEventListener("click", async (e) => {
   if (e.target.id !== "calcular") return;
+  respuesta.hidden = false;
 
   const volumen = document.getElementById("volumen").value;
   const ph = document.getElementById("ph").value;
@@ -100,9 +105,12 @@ document.addEventListener("click", async (e) => {
 });
 // Botones laterales
 const nuevaConsultaBtn = document.getElementById("nuevaConsulta");
+const historialBtn = document.getElementById("historial");
+const informacionBtn = document.getElementById("informacion");
 
 // Eventos de los botones laterales
 nuevaConsultaBtn.addEventListener("click", () => {
+  respuesta.hidden = false;
   if (modoLibreBtn.classList.contains("active")) {
     vistaConsultaLibre();
     modoLibreBtn.classList.add("active");
@@ -112,4 +120,13 @@ nuevaConsultaBtn.addEventListener("click", () => {
     modoGuiadoBtn.classList.add("active");
     modoLibreBtn.classList.remove("active");
   }
+});
+
+historialBtn.addEventListener("click", () => {
+  historial();
+  respuesta.hidden = true;
+});
+informacionBtn.addEventListener("click", () => {
+  informacion();
+  respuesta.hidden = true;
 });
