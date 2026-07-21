@@ -5,7 +5,13 @@
 El sistema permite realizar consultas libres mediante lenguaje natural o utilizar un asistente guiado ingresando los parámetros químicos del agua(cloro, ph, alcalinidad, etc.).
 
 ---
+## 🚀 Demo en línea
 
+La aplicación está disponible en:
+
+**https://poolcare-ai-agent-production.up.railway.app**
+
+---
 # Características
 
 - 🤖 Consultas inteligentes mediante IA (Google Gemini).
