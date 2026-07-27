@@ -1,4 +1,4 @@
-const API = "http://127.0.0.1:8000";
+const API = "";
 
 export async function consultaLibre(texto) {
   const response = await fetch(`${API}/consultar`, {
