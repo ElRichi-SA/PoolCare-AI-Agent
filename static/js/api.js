@@ -1,4 +1,4 @@
-const API = "";
+const API = window.location.origin;
 
 export async function consultaLibre(texto) {
   const response = await fetch(`${API}/consultar`, {
