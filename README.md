@@ -7,9 +7,7 @@ El sistema permite realizar consultas libres mediante lenguaje natural o utiliza
 ---
 ## 🚀 Demo en línea
 
-La aplicación está disponible en:
-
-**https://poolcare-ai-agent-production.up.railway.app**
+> Fuera de línea por el momento.
 
 ---
 # Características
